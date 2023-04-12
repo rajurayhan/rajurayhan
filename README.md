@@ -4,4 +4,4 @@
 </p>
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=rajurayhan&column=7
-)](https://github.com/rajurayhan/github-profile-trophy)
+)](https://github.com/rajurayhan)
