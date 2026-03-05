@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raju Rayhan - Resume</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f0f2f5; color: #1a1a2e; font-size: 11px; line-height: 1.4; }
+  .page { max-width: 820px; margin: 20px auto; background: #fff; box-shadow: 0 4px 30px rgba(0,0,0,0.12); }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); color: #fff; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .header-left h1 { font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+  .header-left .title { color: #a8c4e0; font-size: 11px; font-weight: 500; margin-top: 2px; letter-spacing: 1px; text-transform: uppercase; }
+  .header-right { display: flex; flex-direction: column; gap: 3px; align-items: flex-end; }
+  .contact-item { display: flex; align-items: center; gap: 5px; color: #cde0f0; font-size: 10.5px; }
+  .contact-item a { color: #a8d4f5; text-decoration: none; }
+
+  /* Body layout */
+  .body { display: grid; grid-template-columns: 210px 1fr; }
+
+  /* Sidebar */
+  .sidebar { background: #f7f9fc; padding: 14px 16px; border-right: 1px solid #e8edf3; }
+  .sidebar-section { margin-bottom: 13px; }
+  .sidebar-section h3 { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #0f3460; margin-bottom: 7px; padding-bottom: 4px; border-bottom: 2px solid #0f3460; }
+  .skill-group { margin-bottom: 6px; }
+  .skill-group .label { font-size: 10px; font-weight: 600; color: #333; margin-bottom: 3px; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag { background: #e0eaf5; color: #0f3460; font-size: 9px; padding: 1px 6px; border-radius: 8px; font-weight: 500; }
+  .edu-degree { font-weight: 600; font-size: 11px; color: #1a1a2e; }
+  .edu-school { color: #555; font-size: 10px; margin-top: 1px; }
+  .edu-meta { color: #888; font-size: 10px; margin-top: 1px; }
+  .sidebar a { color: #0f3460; text-decoration: none; font-size: 10px; word-break: break-all; }
+
+  /* Main */
+  .main { padding: 14px 22px; }
+  .main-section { margin-bottom: 12px; }
+  .section-title { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #0f3460; margin-bottom: 8px; padding-bottom: 4px; border-bottom: 2px solid #0f3460; }
+  .objective-text { color: #444; font-size: 11px; line-height: 1.6; }
+
+  /* Experience */
+  .job { margin-bottom: 9px; }
+  .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1px; }
+  .job-title { font-weight: 700; font-size: 11.5px; color: #1a1a2e; }
+  .job-date { font-size: 9.5px; color: #fff; background: #0f3460; padding: 1px 7px; border-radius: 8px; white-space: nowrap; }
+  .job-company { font-size: 10.5px; color: #0f3460; font-weight: 600; margin-bottom: 3px; }
+  .job-company a { color: #0f3460; text-decoration: none; }
+  .job-bullets { padding-left: 12px; }
+  .job-bullets li { font-size: 10.5px; color: #444; margin-bottom: 2px; }
+
+  /* Projects */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; }
+  .project-card { background: #f7f9fc; border: 1px solid #e0eaf5; border-left: 3px solid #0f3460; padding: 7px 9px; border-radius: 0 4px 4px 0; }
+  .project-name { font-weight: 700; font-size: 10.5px; color: #0f3460; margin-bottom: 2px; }
+  .project-desc { font-size: 9.5px; color: #555; margin-bottom: 3px; line-height: 1.4; }
+  .project-tech { font-size: 9px; color: #888; font-style: italic; }
+
+  @media print {
+    @page { size: A4; margin: 8mm; }
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Raju Rayhan</h1>
+      <div class="title">Software Development Lead &amp; Enterprise Web Architect</div>
+    </div>
+    <div class="header-right">
+      <div class="contact-item">📍 Abdullahpur, Uttar Khan, Dhaka, Bangladesh</div>
+      <div class="contact-item">📞 +88 01849699001</div>
+      <div class="contact-item">✉️ <a href="mailto:send2raju.bd@gmail.com">send2raju.bd@gmail.com</a></div>
+      <div class="contact-item">💻 <a href="https://github.com/rajurayhan">github.com/rajurayhan</a></div>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+      <div class="sidebar-section">
+        <h3>Technical Skills</h3>
+        <div class="skill-group">
+          <div class="label">Backend</div>
+          <div class="skill-tags"><span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">CodeIgniter</span><span class="tag">Node.js</span><span class="tag">NestJS</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Frontend</div>
+          <div class="skill-tags"><span class="tag">Vue.js</span><span class="tag">Angular</span><span class="tag">React</span><span class="tag">jQuery</span><span class="tag">HTML/CSS</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="label">Databases</div>
+          <div class="skill-tags"><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">MongoDB</span><span class="tag">Redis</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="label">DevOps &amp; Testing</div>
+          <div class="skill-tags"><span class="tag">Docker</span><span class="tag">Jest</span><span class="tag">Cypress</span><span class="tag">Swagger</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="label">AI &amp; Integrations</div>
+          <div class="skill-tags"><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">Slack</span><span class="tag">ClickUp</span><span class="tag">GoHighLevel</span><span class="tag">HubSpot</span><span class="tag">Zoho</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="label">PM Tools</div>
+          <div class="skill-tags"><span class="tag">Jira</span><span class="tag">Asana</span><span class="tag">Trello</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Education</h3>
+        <div class="edu-degree">BSc. Computer Science &amp; Engineering</div>
+        <div class="edu-school">Northern University Bangladesh</div>
+        <div class="edu-meta">2017 · CGPA: 3.30 / 4.00</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Open Source</h3>
+        <div style="margin-bottom:6px"><div style="font-weight:600;font-size:10.5px;color:#1a1a2e">Larastreamer</div><div style="font-size:10px;color:#555">Laravel video streaming package</div></div>
+        <div style="margin-bottom:6px"><div style="font-weight:600;font-size:10.5px;color:#1a1a2e">Laravel-EWS-Mail-Server</div><div style="font-size:10px;color:#555">Email via Exchange Web Server</div></div>
+        <div><div style="font-weight:600;font-size:10.5px;color:#1a1a2e">GHL WP Bridge</div><div style="font-size:10px;color:#555">WordPress GoHighLevel plugin</div></div>
+      </div>
+
+      <div class="sidebar-section">
+        <h3>Strengths</h3>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:10px;color:#444">✔ System Architecture &amp; Design</span>
+          <span style="font-size:10px;color:#444">✔ Team Leadership &amp; Mentoring</span>
+          <span style="font-size:10px;color:#444">✔ Business-to-Technical Analysis</span>
+          <span style="font-size:10px;color:#444">✔ Multi-project Management</span>
+          <span style="font-size:10px;color:#444">✔ Agile / Remote Collaboration</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+      <div class="main-section">
+        <div class="section-title">Professional Summary</div>
+        <p class="objective-text">Enterprise web architect with <strong>7+ years</strong> of experience in full-stack development, AI-powered platforms, and SaaS products. Proven track record leading remote engineering teams, architecting scalable systems, and translating business requirements into robust technical solutions.</p>
+      </div>
+
+      <div class="main-section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+          <div class="job-header"><div class="job-title">Software Development Lead</div><div class="job-date">May 2023 - Present</div></div>
+          <div class="job-company">Lighthouse Graphics · Remote</div>
+          <ul class="job-bullets">
+            <li>Architected <strong>The Hive</strong> — AI platform integrating OpenAI, Slack, ClickUp & GoHighLevel for auto-generating meeting summaries, action items, and project scopes.</li>
+            <li>Built AI-driven automation solutions using OpenAI APIs and RAG for lead handling and productivity.</li>
+            <li>Led remote engineering team owning architecture, development, and cloud deployments.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header"><div class="job-title">Sr. Software Engineer & Team Lead</div><div class="job-date">Oct 2019 - May 2023</div></div>
+          <div class="job-company"><a href="http://simecsystem.com">SIMEC System Limited</a></div>
+          <ul class="job-bullets">
+            <li>Delivered enterprise apps — e-commerce, HR management, and school management systems.</li>
+            <li>Translated business requirements into technical specs; managed team tasks and code reviews.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header"><div class="job-title">Software Engineer</div><div class="job-date">Jun 2018 - Oct 2019</div></div>
+          <div class="job-company"><a href="http://gugu.co.jp">Gugu Corporation, Japan</a> · Remote</div>
+          <ul class="job-bullets">
+            <li>Developed SaaS-based, test-driven web applications to Japanese quality standards.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header"><div class="job-title">Software Engineer</div><div class="job-date">Aug 2018 - Nov 2019</div></div>
+          <div class="job-company"><a href="https://adboxbd.com">Adbox Bangladesh</a></div>
+          <ul class="job-bullets">
+            <li>Built telecom VAS portals (Robi & Banglalink); integrated mobile billing and bKash payments.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header"><div class="job-title">Web Developer</div><div class="job-date">Jan 2016 - Mar 2018</div></div>
+          <div class="job-company"><a href="https://krazyit.com">Krazy IT</a> · Bangladesh Wing</div>
+          <ul class="job-bullets">
+            <li>Built data-driven web apps for Australian clients; developed mobile app backends for Android & iOS.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="main-section">
+        <div class="section-title">Key Projects</div>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-name">DSS HRMS</div>
+            <div class="project-desc">Full-suite HR system — payroll, attendance, leave & loans.</div>
+            <div class="project-tech">Laravel · Angular · MySQL</div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Sulus.ai</div>
+            <div class="project-desc">White-label SaaS for AI voice agents handling inbound calls.</div>
+            <div class="project-tech">Laravel · Vue.js · MySQL</div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">AalapAI.com</div>
+            <div class="project-desc">SaaS connecting WhatsApp Business to AI agents.</div>
+            <div class="project-tech">Laravel · MySQL</div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Ebonear</div>
+            <div class="project-desc">Multi-vendor e-commerce with microservices architecture.</div>
+            <div class="project-tech">NestJS · Angular · PostgreSQL · Redis</div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">LHG Time Tracker</div>
+            <div class="project-desc">Time & project tool with Slack, Asana & HubSpot integrations.</div>
+            <div class="project-tech">Laravel · MySQL</div>
+          </div>
+          <div class="project-card">
+            <div class="project-name">Accrual Accounting</div>
+            <div class="project-desc">Accounting system with budgeting, procurement & vouchers.</div>
+            <div class="project-tech">Laravel · MySQL</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
