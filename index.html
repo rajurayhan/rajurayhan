@@ -9,26 +9,28 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --ink: #0e0e0e;
-    --ink-mid: #3a3a3a;
-    --ink-muted: #767676;
-    --ink-faint: #b0b0b0;
-    --rule: #d8d8d8;
-    --rule-light: #eeeeee;
-    --accent: #1a3a5c;
-    --accent-mid: #2a5a8a;
-    --accent-bright: #0d7cc0;
-    --surface: #f7f8fa;
-    --white: #ffffff;
-    --tag-bg: #e8f0f8;
-    --tag-text: #1a3a5c;
-    --red-dot: #c0392b;
-    --green-dot: #27ae60;
+    --ink: #e8eaf0;
+    --ink-mid: #b0b8c8;
+    --ink-muted: #6e7a90;
+    --ink-faint: #3e4858;
+    --rule: #2a3244;
+    --rule-light: #222b3a;
+    --accent: #38bdf8;
+    --accent-mid: #7dd3fc;
+    --accent-bright: #38bdf8;
+    --surface: #141c2b;
+    --page-bg: #0d1420;
+    --white: #111827;
+    --tag-bg: #1a2640;
+    --tag-text: #7dd3fc;
+    --tag-new-bg: #0f2a1e;
+    --tag-new-text: #34d399;
+    --outer-bg: #080e18;
   }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: #e9eaec;
+    background: var(--outer-bg);
     color: var(--ink);
     font-size: 11.5px;
     line-height: 1.5;
@@ -38,8 +40,8 @@
   .page {
     max-width: 860px;
     margin: 24px auto;
-    background: var(--white);
-    box-shadow: 0 8px 48px rgba(0,0,0,0.13);
+    background: var(--page-bg);
+    box-shadow: 0 8px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(56,189,248,0.08);
   }
 
   /* ─── HEADER ─── */
@@ -49,7 +51,18 @@
     align-items: end;
     gap: 24px;
     padding: 32px 36px 24px;
-    border-bottom: 1.5px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    background: linear-gradient(135deg, #0d1420 0%, #111d2e 100%);
+    position: relative;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 36px; right: 36px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+    opacity: 0.5;
   }
 
   .header-name {
@@ -58,7 +71,7 @@
     font-weight: 400;
     letter-spacing: -0.5px;
     line-height: 1;
-    color: var(--ink);
+    color: #f0f4ff;
   }
 
   .header-title {
@@ -66,8 +79,9 @@
     font-weight: 500;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--ink-muted);
+    color: var(--accent);
     margin-top: 6px;
+    opacity: 0.85;
   }
 
   .header-contact {
@@ -86,8 +100,8 @@
     font-family: 'DM Mono', monospace;
   }
 
-  .contact-row a { color: var(--accent-bright); text-decoration: none; }
-  .contact-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-bright); flex-shrink: 0; }
+  .contact-row a { color: var(--accent-bright); text-decoration: none; opacity: 0.9; }
+  .contact-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--accent-bright); flex-shrink: 0; opacity: 0.6; }
 
   /* ─── BODY LAYOUT ─── */
   .body {
@@ -109,10 +123,11 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--ink-muted);
+    color: var(--accent);
     margin-bottom: 9px;
     padding-bottom: 5px;
     border-bottom: 1px solid var(--rule);
+    opacity: 0.8;
   }
 
   .skill-group { margin-bottom: 8px; }
@@ -138,11 +153,13 @@
     padding: 2px 7px;
     border-radius: 3px;
     letter-spacing: 0.2px;
+    border: 1px solid rgba(56,189,248,0.12);
   }
 
   .tag.new {
-    background: #e1f5ec;
-    color: #0e5c33;
+    background: var(--tag-new-bg);
+    color: var(--tag-new-text);
+    border: 1px solid rgba(52,211,153,0.15);
   }
 
   .strength-item {
@@ -164,6 +181,7 @@
     background: var(--accent-bright);
     margin-top: 5px;
     flex-shrink: 0;
+    opacity: 0.7;
   }
 
   .edu-name { font-size: 11px; font-weight: 600; color: var(--ink); }
@@ -171,7 +189,7 @@
   .edu-meta { font-size: 10px; color: var(--ink-muted); margin-top: 1px; }
 
   .oss-item { margin-bottom: 8px; }
-  .oss-name { font-size: 10.5px; font-weight: 600; color: var(--ink); font-family: 'DM Mono', monospace; }
+  .oss-name { font-size: 10.5px; font-weight: 600; color: var(--accent-mid); font-family: 'DM Mono', monospace; }
   .oss-desc { font-size: 10px; color: var(--ink-muted); margin-top: 1px; }
 
   /* ─── MAIN ─── */
@@ -184,10 +202,11 @@
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--ink-muted);
+    color: var(--accent);
     margin-bottom: 10px;
     padding-bottom: 5px;
     border-bottom: 1px solid var(--rule);
+    opacity: 0.8;
   }
 
   .summary-text {
@@ -208,7 +227,7 @@
     top: 5px;
     bottom: 0;
     width: 1.5px;
-    background: var(--rule-light);
+    background: rgba(56,189,248,0.15);
   }
 
   .job-header {
@@ -221,7 +240,7 @@
   .job-title {
     font-size: 12px;
     font-weight: 600;
-    color: var(--ink);
+    color: #f0f4ff;
   }
 
   .job-period {
@@ -234,9 +253,10 @@
 
   .job-company {
     font-size: 10.5px;
-    color: var(--accent-mid);
+    color: var(--accent);
     font-weight: 500;
     margin-bottom: 4px;
+    opacity: 0.85;
   }
 
   .job-company a { color: inherit; text-decoration: none; }
@@ -259,6 +279,9 @@
     color: var(--ink-faint);
   }
 
+  .job-bullets li strong { color: var(--ink); }
+  .job-bullets li a { color: var(--accent); }
+
   /* ─── PROJECTS ─── */
   .projects-grid {
     display: grid;
@@ -268,15 +291,15 @@
 
   .project-card {
     border: 1px solid var(--rule);
-    border-top: 2.5px solid var(--accent);
+    border-top: 2px solid var(--accent);
     padding: 9px 11px;
-    background: var(--white);
+    background: var(--surface);
   }
 
   .project-name {
     font-size: 11px;
     font-weight: 600;
-    color: var(--ink);
+    color: #f0f4ff;
     margin-bottom: 3px;
   }
 
@@ -296,7 +319,7 @@
   /* ─── PRINT ─── */
   @media print {
     @page { size: A4; margin: 10mm 8mm; }
-    body { background: #fff; font-size: 10.5px; }
+    body { background: #0d1420; font-size: 10.5px; }
     .page { box-shadow: none; margin: 0; max-width: 100%; }
     .projects-grid { grid-template-columns: repeat(3, 1fr); }
     .body { grid-template-columns: 210px 1fr; }
@@ -504,7 +527,7 @@
           </div>
           <div class="job-company"><a href="http://simecsystem.com">SIMEC System Limited</a></div>
           <ul class="job-bullets">
-            <li>Architected and delivered <strong>eDP</strong> (<a href="https://edp.gov.bd" style="color:inherit">edp.gov.bd</a>) — a government defense procurement platform for DGDP, Bangladesh Ministry of Defense, built on a Java Spring Boot microservices architecture with React frontend and Oracle DB.</li>
+            <li>Architected and delivered <strong>eDP</strong> (<a href="https://edp.gov.bd">edp.gov.bd</a>) — a government defense procurement platform for DGDP, Bangladesh Ministry of Defense, built on a Java Spring Boot microservices architecture with React frontend and Oracle DB.</li>
             <li>Delivered additional enterprise systems including e-commerce platforms, HR management, and school management systems.</li>
             <li>Translated business requirements into technical specifications and system architecture; managed team tasks and code reviews.</li>
           </ul>
