@@ -8,6 +8,7 @@
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* ── DARK THEME (default) ── */
   :root {
     --ink: #e8eaf0;
     --ink-mid: #b0b8c8;
@@ -26,6 +27,81 @@
     --tag-new-bg: #0f2a1e;
     --tag-new-text: #34d399;
     --outer-bg: #080e18;
+    --header-name-color: #f0f4ff;
+    --header-bg-start: #0d1420;
+    --header-bg-end: #111d2e;
+    --job-title-color: #f0f4ff;
+    --project-name-color: #f0f4ff;
+    --page-shadow: 0 8px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(56,189,248,0.08);
+    --toggle-bg: #1a2640;
+    --toggle-border: #2a3a55;
+    --toggle-color: #38bdf8;
+    --toggle-hover-bg: #223050;
+  }
+
+  /* ── LIGHT THEME ── */
+  body.light {
+    --ink: #0e0e0e;
+    --ink-mid: #3a3a3a;
+    --ink-muted: #767676;
+    --ink-faint: #b0b0b0;
+    --rule: #d8d8d8;
+    --rule-light: #eeeeee;
+    --accent: #1a3a5c;
+    --accent-mid: #2a5a8a;
+    --accent-bright: #0d7cc0;
+    --surface: #f7f8fa;
+    --page-bg: #ffffff;
+    --white: #ffffff;
+    --tag-bg: #e8f0f8;
+    --tag-text: #1a3a5c;
+    --tag-new-bg: #e1f5ec;
+    --tag-new-text: #0e5c33;
+    --outer-bg: #e9eaec;
+    --header-name-color: #0e0e0e;
+    --header-bg-start: #ffffff;
+    --header-bg-end: #ffffff;
+    --job-title-color: #0e0e0e;
+    --project-name-color: #0e0e0e;
+    --page-shadow: 0 8px 48px rgba(0,0,0,0.13);
+    --toggle-bg: #f0f4f8;
+    --toggle-border: #d0d8e4;
+    --toggle-color: #1a3a5c;
+    --toggle-hover-bg: #e0e8f4;
+  }
+
+  /* ── TOGGLE BUTTON ── */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    z-index: 1000;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    color: var(--toggle-color);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+
+  .theme-toggle:hover { background: var(--toggle-hover-bg); }
+
+  .toggle-icon { font-size: 13px; line-height: 1; }
+
+  /* ── TRANSITIONS ── */
+  body, .page, .header, .sidebar, .tag, .project-card, .oss-name,
+  .section-label, .sidebar-label, .job-company, .header-title {
+    transition: background 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   body {
@@ -41,7 +117,7 @@
     max-width: 860px;
     margin: 24px auto;
     background: var(--page-bg);
-    box-shadow: 0 8px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(56,189,248,0.08);
+    box-shadow: var(--page-shadow);
   }
 
   /* ─── HEADER ─── */
@@ -52,7 +128,7 @@
     gap: 24px;
     padding: 32px 36px 24px;
     border-bottom: 1px solid var(--rule);
-    background: linear-gradient(135deg, #0d1420 0%, #111d2e 100%);
+    background: linear-gradient(135deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
     position: relative;
   }
 
@@ -71,7 +147,7 @@
     font-weight: 400;
     letter-spacing: -0.5px;
     line-height: 1;
-    color: #f0f4ff;
+    color: var(--header-name-color);
   }
 
   .header-title {
@@ -240,7 +316,7 @@
   .job-title {
     font-size: 12px;
     font-weight: 600;
-    color: #f0f4ff;
+    color: var(--job-title-color);
   }
 
   .job-period {
@@ -299,7 +375,7 @@
   .project-name {
     font-size: 11px;
     font-weight: 600;
-    color: #f0f4ff;
+    color: var(--project-name-color);
     margin-bottom: 3px;
   }
 
@@ -327,6 +403,12 @@
 </style>
 </head>
 <body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+  <span class="toggle-icon">☀️</span>
+  <span id="toggleLabel">Light mode</span>
+</button>
+
 <div class="page">
 
   <!-- HEADER -->
@@ -608,5 +690,12 @@
     </div>
   </div>
 </div>
+<script>
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    document.getElementById('toggleLabel').textContent = isLight ? 'Dark mode' : 'Light mode';
+    document.querySelector('.toggle-icon').textContent = isLight ? '🌙' : '☀️';
+  }
+</script>
 </body>
 </html>
