@@ -93,12 +93,70 @@
     --toggle-hover-bg: #e0e8f4;
   }
 
-  /* ── TOGGLE BUTTON ── */
-  .theme-toggle {
+  /* ── THEME SWITCH (icon only) ── */
+  .theme-switch {
     position: fixed;
     top: 20px;
     right: 24px;
     z-index: 1000;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .theme-switch:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 20px;
+  }
+
+  .theme-switch-track {
+    display: block;
+    width: 50px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+    position: relative;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .theme-switch:hover .theme-switch-track {
+    background: var(--toggle-hover-bg);
+  }
+
+  .theme-switch-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--page-bg);
+    border: 1px solid var(--rule);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    line-height: 1;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.2s, border-color 0.2s;
+  }
+
+  body.light .theme-switch-knob {
+    transform: translateX(24px);
+  }
+
+  /* ── PDF DOWNLOAD (theme-matched file) ── */
+  .pdf-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
     background: var(--toggle-bg);
     border: 1px solid var(--toggle-border);
     color: var(--toggle-color);
@@ -108,21 +166,18 @@
     letter-spacing: 0.5px;
     padding: 7px 14px;
     border-radius: 20px;
+    text-decoration: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   }
 
-  .theme-toggle:hover { background: var(--toggle-hover-bg); }
+  .pdf-download:hover { background: var(--toggle-hover-bg); }
 
-  .toggle-icon { font-size: 13px; line-height: 1; }
+  .pdf-download-icon { font-size: 12px; line-height: 1; opacity: 0.9; }
 
   /* ── TRANSITIONS ── */
   body, .page, .header, .sidebar, .tag, .project-card, .oss-name,
-  .section-label, .sidebar-label, .job-company, .header-title {
+  .section-label, .sidebar-label, .job-company, .header-title, .pdf-download {
     transition: background 0.3s ease, color 0.3s ease,
                 border-color 0.3s ease, box-shadow 0.3s ease;
   }
@@ -422,14 +477,16 @@
     .page { box-shadow: none; margin: 0; max-width: 100%; }
     .projects-grid { grid-template-columns: repeat(3, 1fr); }
     .body { grid-template-columns: 210px 1fr; }
+    .theme-switch, .pdf-download { display: none !important; }
   }
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
-  <span class="toggle-icon">☀️</span>
-  <span id="toggleLabel">Light mode</span>
+<button type="button" class="theme-switch" onclick="toggleTheme()" id="themeBtn" role="switch" aria-checked="false" aria-label="Toggle light and dark theme" title="Toggle theme">
+  <span class="theme-switch-track">
+    <span class="theme-switch-knob"><span class="theme-switch-icon" aria-hidden="true">🌙</span></span>
+  </span>
 </button>
 
 <div class="page">
@@ -439,6 +496,10 @@
     <div>
       <div class="header-name">Raju Rayhan</div>
       <div class="header-title">Head of Development &amp; AI Platform Architect</div>
+      <a id="pdfDownload" class="pdf-download" href="pdf/resume_dark_raju_rayhan.pdf" download="Raju-Rayhan-Resume-dark.pdf" title="Download resume as PDF">
+        <span class="pdf-download-icon" aria-hidden="true">↓</span>
+        <span>Download PDF</span>
+      </a>
     </div>
     <div class="header-contact">
       <div class="contact-row"><span class="dot"></span> Dhaka, Bangladesh</div>
@@ -714,11 +775,35 @@
   </div>
 </div>
 <script>
-  function toggleTheme() {
-    const isLight = document.body.classList.toggle('light');
-    document.getElementById('toggleLabel').textContent = isLight ? 'Dark mode' : 'Light mode';
-    document.querySelector('.toggle-icon').textContent = isLight ? '🌙' : '☀️';
+  function updatePdfDownload() {
+    var link = document.getElementById('pdfDownload');
+    if (!link) return;
+    var isLight = document.body.classList.contains('light');
+    if (isLight) {
+      link.href = 'pdf/resume_raju_rayhan.pdf';
+      link.setAttribute('download', 'Raju-Rayhan-Resume-light.pdf');
+    } else {
+      link.href = 'pdf/resume_dark_raju_rayhan.pdf';
+      link.setAttribute('download', 'Raju-Rayhan-Resume-dark.pdf');
+    }
   }
+
+  function syncThemeSwitch() {
+    var isLight = document.body.classList.contains('light');
+    var btn = document.getElementById('themeBtn');
+    var icon = btn && btn.querySelector('.theme-switch-icon');
+    if (btn) btn.setAttribute('aria-checked', isLight ? 'true' : 'false');
+    if (icon) icon.textContent = isLight ? '☀️' : '🌙';
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('light');
+    syncThemeSwitch();
+    updatePdfDownload();
+  }
+
+  syncThemeSwitch();
+  updatePdfDownload();
 </script>
 </body>
 </html>
