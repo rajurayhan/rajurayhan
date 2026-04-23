@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Raju Rayhan — Head of Development &amp; AI Platform Architect | Resume</title>
 <meta name="description" content="Resume of Raju Rayhan — Head of Development &amp; AI Platform Architect. AI platform architecture, voice AI, MCP, RAG, Laravel, Vue, and multi-tenant SaaS. Dhaka, Bangladesh.">
 <meta name="author" content="Raju Rayhan">
@@ -468,6 +468,152 @@
     font-size: 8.5px;
     color: var(--ink-muted);
     font-family: 'DM Mono', monospace;
+  }
+
+  /* ─── MOBILE / NARROW VIEWPORTS ─── */
+  @media (max-width: 720px) {
+    .theme-switch {
+      top: max(12px, env(safe-area-inset-top, 0px));
+      right: max(12px, env(safe-area-inset-right, 0px));
+    }
+
+    .page {
+      margin: 12px max(12px, env(safe-area-inset-left, 0px)) 12px max(12px, env(safe-area-inset-right, 0px));
+      max-width: 100%;
+    }
+
+    .header {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 18px;
+      padding: 52px 18px 20px;
+    }
+
+    .header::after {
+      left: 18px;
+      right: 18px;
+    }
+
+    .header-contact {
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .contact-row {
+      font-size: 11px;
+      flex-wrap: wrap;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    .header-name {
+      font-size: clamp(26px, 9vw, 38px);
+    }
+
+    .header-title {
+      letter-spacing: 1.2px;
+      line-height: 1.35;
+    }
+
+    .pdf-download {
+      margin-top: 12px;
+    }
+
+    .body {
+      grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+      padding: 20px 18px;
+    }
+
+    .main {
+      padding: 20px 18px;
+    }
+
+    .summary-text,
+    .job-bullets li,
+    .strength-item {
+      font-size: 12px;
+    }
+
+    .job-title {
+      font-size: 13px;
+    }
+
+    .job-company {
+      font-size: 11px;
+    }
+
+    .job-header {
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2px 10px;
+    }
+
+    .job-period {
+      white-space: normal;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-name {
+      font-size: 12px;
+    }
+
+    .project-desc {
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .project-tech {
+      font-size: 9px;
+    }
+
+    .section-label,
+    .sidebar-label {
+      letter-spacing: 1.5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+
+    .page {
+      margin: 8px max(10px, env(safe-area-inset-left, 0px)) 8px max(10px, env(safe-area-inset-right, 0px));
+    }
+
+    .header {
+      padding: 48px 14px 18px;
+    }
+
+    .header::after {
+      left: 14px;
+      right: 14px;
+    }
+
+    .sidebar,
+    .main {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .tag {
+      font-size: 9.5px;
+      padding: 3px 8px;
+    }
+
+    .skill-cat {
+      font-size: 10.5px;
+    }
   }
 
   /* ─── PRINT ─── */
