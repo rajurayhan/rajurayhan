@@ -7,7 +7,7 @@
 
 ## Professional Summary
 
-AI platform architect and full-stack lead with **10+ years** of experience building production SaaS systems, voice AI infrastructure, and intelligent automation pipelines. Deep hands-on expertise in **MCP server development**, **RAG / vector search**, multi-tenant SaaS architecture, and orchestrating AI agents via n8n and the Claude & OpenAI APIs. Track record of leading distributed engineering teams and shipping complex, integrated products end-to-end.
+AI platform architect and full-stack lead with **10+ years** of experience building production SaaS systems, voice AI infrastructure, and intelligent automation pipelines. Deep hands-on expertise in **MCP server development**, **RAG / vector search**, **Next.js/React** ecosystems, and **TypeScript**-first architecture. Specialized in multi-tenant SaaS platforms, orchestrating AI agents via n8n and the Claude & OpenAI APIs, and building modern web applications with Next.js, Hono, Supabase, and serverless infrastructure. Track record of leading distributed engineering teams and shipping complex, integrated products end-to-end.
 
 ---
 
@@ -15,12 +15,17 @@ AI platform architect and full-stack lead with **10+ years** of experience build
 
 | Category | Technologies |
 |---|---|
-| **Backend** | PHP, Laravel, CodeIgniter, Node.js, NestJS, Python, Java, Spring Boot |
-| **Frontend** | Vue.js, Angular, React, jQuery, HTML/CSS |
+| **Languages** | TypeScript, JavaScript, PHP, Python, Java |
+| **Backend** | Node.js, Hono, NestJS, Laravel, Spring Boot, CodeIgniter |
+| **Frontend** | Next.js 15/16, React 19, Vue.js, Angular, Tailwind CSS 4, shadcn/ui, Radix UI |
+| **State & Forms** | TanStack Query, Zustand, React Hook Form, Zod |
 | **AI & Voice** | Claude API, OpenAI API, MCP, RAG / Vector DB, Pinecone, ElevenLabs, Deepgram, Pipecat, Vapi |
-| **Automation & Integrations** | n8n, GoHighLevel, Twilio, Stripe, Stripe Connect, Yelp API, Slack, HubSpot, Zoho, ClickUp, Asana |
-| **Databases** | MySQL, PostgreSQL, Supabase, MongoDB, Redis, Oracle, SQL Server |
-| **DevOps & Testing** | Docker, Jest, Cypress, Swagger |
+| **Databases & ORM** | Supabase, PostgreSQL, Drizzle ORM, MySQL, MongoDB, Redis, Upstash Redis, Oracle |
+| **Background Jobs** | Inngest, n8n |
+| **Auth & Storage** | Supabase Auth, Better Auth, Supabase Storage |
+| **Automation & Integrations** | n8n, GoHighLevel, Twilio, Stripe, Stripe Connect, Yelp API, Slack, HubSpot, Zoho, ClickUp, Asana, Resend, React Email |
+| **Infrastructure** | Vercel, Cloudflare Workers, Railway, Cloudflare R2, Docker |
+| **Testing** | Vitest, Jest, Cypress, Swagger |
 
 ---
 
