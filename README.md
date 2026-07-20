@@ -83,8 +83,8 @@ AI platform architect and full-stack lead with **10+ years** of experience build
 | Project | Description | Tech Stack |
 |---|---|---|
 | **Sulus.ai** | White-label multi-tenant SaaS for AI voice agents — reseller model, GHL CRM sync, Pinecone KB, n8n automation, and voice infrastructure | Laravel, Vue.js, n8n, Supabase, Pinecone, GHL |
-| **[MCPQonnect](https://mcpqonnect.com/)** | MCP Server Connection Platform — enabling seamless integration and communication between MCP servers | Laravel, Vue.js, MCP, WebSocket |
-| **[Sulus ERP](https://suluserp.vercel.app/)** | Enterprise Resource Planning System — comprehensive business management solution | Laravel, Vue.js, MySQL |
+| **[MCPQonnect](https://mcpqonnect.com/)** | MCP Server Connection Platform — enabling seamless integration and communication between MCP servers | Next.js 15, React, TypeScript, Hono, Supabase, Upstash Redis, Inngest, shadcn/ui |
+| **[Sulus ERP](https://suluserp.vercel.app/)** | Enterprise Resource Planning System — comprehensive business management solution | Next.js 16, React 19, TypeScript, Supabase, Drizzle ORM, Inngest, Tailwind CSS 4, shadcn/ui |
 | **The Hive** | AI platform for meeting summaries, action items, and scope generation. Includes Yelp webhook integration — receives business leads/queries and responds autonomously with AI | Laravel, NestJS, React, OpenAI, GHL, Slack, Yelp API |
 | **eDP — Defense Procurement** | Government procurement platform for Bangladesh DGDP (Ministry of Defense) — microservices, multi-module, high-security | Java, Spring Boot, React, Oracle, Redis |
 | **AalapAI.com** | Personal SaaS platform connecting WhatsApp Business numbers to AI agents for automated customer conversations | Laravel, MySQL, OpenAI API |
