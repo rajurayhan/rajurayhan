@@ -98,6 +98,7 @@ AI platform architect and full-stack lead with **10+ years** of experience build
 
 ## Open Source
 
+- **[ai-agent-framework](https://github.com/rajurayhan/ai-agent-framework)** — AI Agent Framework for building intelligent agents
 - **[laravel-n8n-mcp-server](https://github.com/rajurayhan)** — 54-tool MCP server bridging Laravel & n8n workflows
 - **laravel-quickbooks-mcp-server** — 49-tool QuickBooks MCP — OAuth 2.0, multi-tenant
 - **laravel-notion-mcp-server** — MCP server for Notion integration via Laravel
