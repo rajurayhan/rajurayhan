@@ -5,14 +5,6 @@
 
 ---
 
-## Portfolio
-
-🌐 **Live Projects**
-- **[MCPQonnect](https://mcpqonnect.com/)** — MCP Server Connection Platform
-- **[Sulus ERP](https://suluserp.vercel.app/)** — Enterprise Resource Planning System
-
----
-
 ## Professional Summary
 
 AI platform architect and full-stack lead with **10+ years** of experience building production SaaS systems, voice AI infrastructure, and intelligent automation pipelines. Deep hands-on expertise in **MCP server development**, **RAG / vector search**, multi-tenant SaaS architecture, and orchestrating AI agents via n8n and the Claude & OpenAI APIs. Track record of leading distributed engineering teams and shipping complex, integrated products end-to-end.
@@ -96,6 +88,11 @@ AI platform architect and full-stack lead with **10+ years** of experience build
 | **AalapAI.com** | Personal SaaS platform connecting WhatsApp Business numbers to AI agents for automated customer conversations | Laravel, MySQL, OpenAI API |
 | **DSS HRMS** | Full-suite HR management system — payroll, attendance, leave management & loans | Laravel, Angular, MySQL |
 | **LearnWithAI.BD** | Bangla-first AI-powered programming mentor platform targeting Bangladeshi developers — waitlist beta launched | Laravel, Vue.js, Inertia.js, Claude API |
+
+### 🌐 Live Portfolio
+
+- **[MCPQonnect](https://mcpqonnect.com/)** — MCP Server Connection Platform
+- **[Sulus ERP](https://suluserp.vercel.app/)** — Enterprise Resource Planning System
 
 ---
 
